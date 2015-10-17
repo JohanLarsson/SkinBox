@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace ResourceKeyBox
+namespace SkinBox.Demo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -1,9 +1,9 @@
-﻿<Window x:Class="ResourceKeyBox.MainWindow"
+﻿<Window x:Class="SkinBox.Demo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="clr-namespace:ResourceBox.Controls;assembly=ResourceBox.Controls"
+        xmlns:controls="clr-namespace:SkinBox.Controls;assembly=SkinBox.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:ResourceKeyBox"
+        xmlns:local="clr-namespace:SkinBox.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="MainWindow"
         Width="525"
@@ -16,10 +16,10 @@
         </Grid.RowDefinitions>
         <UniformGrid Height="50" Rows="1">
             <Button Background="Yellow"
-                    Click="OnChangeSkinClick"
+                    Command="{x:Static controls:Keys.SetYellowSkinCommand}"
                     Content="{x:Static controls:Keys.YellowSkinKey}" />
             <Button Background="Blue"
-                    Click="OnChangeSkinClick"
+                    Command="{x:Static controls:Keys.SetBlueSkinCommand}"
                     Content="{x:Static controls:Keys.BlueSkinKey}" />
         </UniformGrid>
         <UniformGrid Grid.Row="1" Rows="1">

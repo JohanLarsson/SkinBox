@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:ResourceBox.Controls">
+                    xmlns:controls="clr-namespace:SkinBox.Controls">
     <SolidColorBrush x:Key="{x:Static controls:Keys.BackgroundBrushKey}" Color="Yellow" />
 
     <ControlTemplate x:Key="{x:Static controls:Keys.CustomControlTemplateKey}" TargetType="{x:Type controls:CustomControl}">

@@ -1,4 +1,4 @@
-﻿namespace ResourceBox.Controls
+﻿namespace SkinBox.Controls
 {
     using System.Windows;
     using System.Windows.Controls;
