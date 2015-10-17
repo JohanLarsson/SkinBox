@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ResourceBox.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ResourceBox.Controls;component/Themes/Skins/Blue.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ResourceDictionary x:Key="{x:Static local:Keys.BlueSkinKey}" Source="ResourceBox.Controls;component/Themes/Skins/Blue.xaml" />
+    <ResourceDictionary x:Key="{x:Static local:Keys.YellowSkinKey}" Source="ResourceBox.Controls;component/Themes/Skins/Yellow.xaml" />
+
+    <Style TargetType="{x:Type local:CustomControl}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static local:Keys.BackgroundBrushKey}}" />
+        <Setter Property="Template" Value="{DynamicResource {x:Static local:Keys.CustomControlTemplateKey}}" />
+    </Style>
+</ResourceDictionary>

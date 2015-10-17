@@ -1,8 +1,8 @@
-﻿namespace ResourceKeyBox
-{
-    using System.Windows;
-    using System.Windows.Media;
+﻿using System.Windows;
+using System.Windows.Controls;
 
+namespace ResourceKeyBox
+{
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -13,9 +13,14 @@
             InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void OnChangeSkinClick(object sender, RoutedEventArgs e)
         {
-            Resources[Keys.BlueBrushKey] = Brushes.Honeydew;
+            var button = (Button) sender;
+            var skin = (ResourceDictionary)TryFindResource(button.Content);
+            if (skin != null)
+            {
+                Resources.MergedDictionaries.Add(skin);
+            }
         }
     }
 }
