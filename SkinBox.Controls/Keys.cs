@@ -7,19 +7,19 @@ namespace SkinBox.Controls
 
     public static class Keys
     {
-        public static ResourceKey BackgroundBrushKey { get; } = Get();
+        public static ResourceKey BackgroundBrushKey { get; } = CreateResourceKey();
 
-        public static ResourceKey CustomControlTemplateKey { get; } = Get();
+        public static ResourceKey CustomControlTemplateKey { get; } = CreateResourceKey();
 
-        public static ResourceKey BlueSkinKey { get; } = Get();
+        public static ResourceKey BlueSkinKey { get; } = CreateResourceKey();
 
         public static ICommand SetBlueSkinCommand { get; } = new ChangeSkinCommand(BlueSkinKey);
 
-        public static ResourceKey YellowSkinKey { get; } = Get();
+        public static ResourceKey YellowSkinKey { get; } = CreateResourceKey();
 
         public static ICommand SetYellowSkinCommand { get; } = new ChangeSkinCommand(YellowSkinKey);
 
-        private static ComponentResourceKey Get([CallerMemberName] string caller = null)
+        private static ComponentResourceKey CreateResourceKey([CallerMemberName] string caller = null)
         {
             return new ComponentResourceKey(typeof(Keys), caller); ;
         }
