@@ -5,11 +5,14 @@
         <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Colors.xaml" />
         <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <ControlTemplate x:Key="{x:Static local:Templates.CustomControlTemplateKey}" TargetType="{x:Type local:CustomControl}">
-        <Rectangle Fill="{TemplateBinding Background}"
-                   Stretch="Fill"
-                   Stroke="{TemplateBinding BorderBrush}"
-                   StrokeThickness="30" />
+        <UniformGrid Rows="1">
+            <Rectangle Fill="{DynamicResource {x:Static local:Brushes.AccentBrushKey}}" Stretch="Fill" />
+
+            <Rectangle Fill="{TemplateBinding Background}" Stretch="Fill" />
+
+            <Rectangle Fill="{TemplateBinding BorderBrush}" Stretch="Fill" />
+        </UniformGrid>
     </ControlTemplate>
 </ResourceDictionary>

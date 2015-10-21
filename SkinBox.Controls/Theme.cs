@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace SkinBox.Controls
 {
@@ -11,7 +12,7 @@ namespace SkinBox.Controls
 
         public static ICommand ApplyBlueThemeCommand { get; } = CreateThemeCommand(Themes.BlueThemeKey);
 
-        public static void Apply(ResourceDictionary theme)
+        public static void ApplyTheme(ResourceDictionary theme)
         {
             Application.Current.Resources.MergedDictionaries.Add(theme);
             if (_current != null)
@@ -19,6 +20,13 @@ namespace SkinBox.Controls
                 Application.Current.Resources.MergedDictionaries.Remove(_current);
             }
             _current = theme;
+        }
+
+        public static void ApplyAccent(Color accent)
+        {
+            Application.Current.Resources[Colors.AccentColorKey] = accent;
+            Application.Current.Resources[Brushes.AccentBrushKey] =new SolidColorBrush(accent).GetAsFrozen();
+            ApplyTheme(_current);
         }
 
         private static ICommand CreateThemeCommand(ResourceKey key)

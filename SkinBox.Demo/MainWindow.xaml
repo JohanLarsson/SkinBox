@@ -11,16 +11,26 @@
         mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <UniformGrid Height="50" Rows="1">
-            <Button Background="Yellow"
-                    Command="{x:Static controls:Theme.ApplyYellowThemeCommand}" />
-            <Button Background="Blue"
-                    Command="{x:Static controls:Theme.ApplyBlueThemeCommand}" />
-        </UniformGrid>
-        <UniformGrid Grid.Row="1" Rows="1">
+        <GroupBox Grid.Row="0" Header="Accents">
+            <UniformGrid Rows="1">
+                <Button Background="Red" Click="OnApplyAccentClick" />
+                <Button Background="Gray" Click="OnApplyAccentClick" />
+                <Button Background="Green" Click="OnApplyAccentClick" />
+            </UniformGrid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Header="Themes">
+            <UniformGrid Rows="1">
+                <Button Background="Yellow" Command="{x:Static controls:Theme.ApplyYellowThemeCommand}" />
+                <Button Background="Blue" Command="{x:Static controls:Theme.ApplyBlueThemeCommand}" />
+            </UniformGrid>
+        </GroupBox>
+
+        <UniformGrid Grid.Row="2" Rows="1">
             <GroupBox Header="Local">
                 <UniformGrid Rows="1">
                     <Border Background="{DynamicResource {x:Static controls:Brushes.AccentBrushKey}}" />

@@ -9,7 +9,7 @@ namespace SkinBox.Controls
         {
             var resourceLocator = new Uri(@"/SkinBox.Controls;component/Themes/Skins/Yellow.Theme.xaml", UriKind.Relative);
             var theme = (ResourceDictionary)Application.LoadComponent(resourceLocator);
-            Theme.Apply(theme);
+            Theme.ApplyTheme(theme);
         }
     }
 }

@@ -2,4 +2,5 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:SkinBox.Controls">
     <Color x:Key="{x:Static controls:Colors.BackgroundColorKey}">Blue</Color>
+    <Color x:Key="{x:Static controls:Colors.AccentColorKey}">HotPink</Color>
 </ResourceDictionary>

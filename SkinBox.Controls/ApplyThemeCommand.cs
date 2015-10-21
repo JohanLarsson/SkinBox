@@ -19,17 +19,14 @@ namespace SkinBox.Controls
 
         public ResourceDictionary Theme { get; set; }
 
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
+        public bool CanExecute(object parameter) => true;
 
         public void Execute(object parameter)
         {
             var theme = parameter as ResourceDictionary ?? Theme;
             if (theme != null)
             {
-                Controls.Theme.Apply(theme);
+                Controls.Theme.ApplyTheme(theme);
             }
         }
 

@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using SkinBox.Controls;
 
 namespace SkinBox.Demo
 {
@@ -13,14 +15,11 @@ namespace SkinBox.Demo
             InitializeComponent();
         }
 
-        private void OnChangeSkinClick(object sender, RoutedEventArgs e)
+        private void OnApplyAccentClick(object sender, RoutedEventArgs e)
         {
             var button = (Button) sender;
-            var skin = (ResourceDictionary)TryFindResource(button.Content);
-            if (skin != null)
-            {
-                Resources.MergedDictionaries.Add(skin);
-            }
+            var brush = (SolidColorBrush)button.Background;
+            Theme.ApplyAccent(brush.Color);
         }
     }
 }
