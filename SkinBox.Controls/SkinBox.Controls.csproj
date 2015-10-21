@@ -41,19 +41,24 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="ChangeSkinCommand.cs" />
+    <Compile Include="ColorKey.cs" />
     <Compile Include="CustomControl.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Themes\Skins\Blue.xaml">
+    <Page Include="Themes\Skins\Blue.Skin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Skins\Yellow.xaml">
+    <Page Include="Themes\Skins\Yellow.Skin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,11 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:SkinBox.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="SkinBox.Controls;component/Themes/Skins/Blue.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Skin.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <ResourceDictionary x:Key="{x:Static local:Keys.BlueSkinKey}" Source="SkinBox.Controls;component/Themes/Skins/Blue.xaml" />
-    <ResourceDictionary x:Key="{x:Static local:Keys.YellowSkinKey}" Source="SkinBox.Controls;component/Themes/Skins/Yellow.xaml" />
+    <ResourceDictionary x:Key="{x:Static local:Keys.BlueSkinKey}" Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Skin.xaml" />
+    <ResourceDictionary x:Key="{x:Static local:Keys.YellowSkinKey}" Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Yellow.Skin.xaml" />
+    <ResourceDictionary x:Key="{x:Static local:Keys.BrushesKey}" Source="pack://application:,,,/SkinBox.Controls;component/Themes/Brushes.xaml" />
 
     <Style TargetType="{x:Type local:CustomControl}">
         <Setter Property="Background" Value="{DynamicResource {x:Static local:Keys.BackgroundBrushKey}}" />
