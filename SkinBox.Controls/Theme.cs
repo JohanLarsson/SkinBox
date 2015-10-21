@@ -12,6 +12,8 @@ namespace SkinBox.Controls
 
         public static ICommand ApplyBlueThemeCommand { get; } = CreateThemeCommand(Themes.BlueThemeKey);
 
+        public static ICommand ApplyAccentCommand { get; } = new ApplyAccentCommand();
+
         public static void ApplyTheme(ResourceDictionary theme)
         {
             Application.Current.Resources.MergedDictionaries.Add(theme);

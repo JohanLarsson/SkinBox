@@ -17,9 +17,18 @@
         </Grid.RowDefinitions>
         <GroupBox Grid.Row="0" Header="Accents">
             <UniformGrid Rows="1">
-                <Button Background="Red" Click="OnApplyAccentClick" />
-                <Button Background="Gray" Click="OnApplyAccentClick" />
-                <Button Background="Green" Click="OnApplyAccentClick" />
+                <Button Background="Red"
+                        Command="{x:Static controls:Theme.ApplyAccentCommand}"
+                        CommandParameter="{Binding Background,
+                                                   RelativeSource={RelativeSource Self}}" />
+                <Button Background="Gray"
+                        Command="{x:Static controls:Theme.ApplyAccentCommand}"
+                        CommandParameter="{Binding Background,
+                                                   RelativeSource={RelativeSource Self}}" />
+                <Button Background="Green"
+                        Command="{x:Static controls:Theme.ApplyAccentCommand}"
+                        CommandParameter="{Binding Background,
+                                                   RelativeSource={RelativeSource Self}}" />
             </UniformGrid>
         </GroupBox>
 
