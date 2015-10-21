@@ -3,8 +3,11 @@
                     xmlns:controls="clr-namespace:SkinBox.Controls">
     <Color x:Key="{x:Static controls:Keys.BackgroundColorKey}">Yellow</Color>
     <!--<SolidColorBrush x:Key="{x:Static controls:Keys.BackgroundBrushKey}" Color="{StaticResource {x:Static controls:Keys.BackgroundColorKey}}" />-->
-    
+
     <ControlTemplate x:Key="{x:Static controls:Keys.CustomControlTemplateKey}" TargetType="{x:Type controls:CustomControl}">
-        <Ellipse Fill="{TemplateBinding Background}" Stretch="Fill" />
+        <Ellipse Fill="{TemplateBinding Background}"
+                 Stretch="Fill"
+                 Stroke="{TemplateBinding BorderBrush}"
+                 StrokeThickness="30" />
     </ControlTemplate>
 </ResourceDictionary>

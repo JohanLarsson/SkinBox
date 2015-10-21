@@ -1,8 +1,11 @@
 ﻿namespace SkinBox.Controls
 {
+    using System;
     using System.Collections;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Media;
+    using System.Windows.Media.Animation;
 
     public static class ColorKey
     {
@@ -18,14 +21,15 @@
             Application.Current.Resources.MergedDictionaries.Add(brushes);
         }
 
-        public static void SetRecourceReference(this SolidColorBrush element, System.Windows.Expression value)
+        public static void SetRecourceReference(this Animatable element, System.Windows.Expression value)
         {
             element.SetValue(RecourceReferenceProperty, value);
         }
 
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(SolidColorBrush))]
-        public static System.Windows.Expression GetRecourceReference(this SolidColorBrush element)
+        [AttachedPropertyBrowsableForType(typeof(GradientStop))]
+        public static System.Windows.Expression GetRecourceReference(this Animatable element)
         {
             return (System.Windows.Expression)element.GetValue(RecourceReferenceProperty);
         }
@@ -49,6 +53,16 @@
                         dictionary[kvp.Key] = clone;
                     }
                 }
+
+                var gradientBrush = kvp.Value as GradientBrush;
+                if (gradientBrush != null)
+                {
+                    if (gradientBrush.GradientStops.Any(x => GetRecourceReference(x) != null))
+                    {
+                        var clone = gradientBrush.Clone();
+                        dictionary[kvp.Key] = clone;
+                    }
+                }
             }
             foreach (var mergedDictionary in dictionary.MergedDictionaries)
             {
@@ -58,33 +72,20 @@
 
         private static void OnExpressionChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            var key = GetKeyInResourceDictionary(Application.Current.Resources, o);
-            o.SetValue(SolidColorBrush.ColorProperty, e.NewValue);
-        }
-
-        private static object GetKeyInResourceDictionary(ResourceDictionary dictionary, object resourceItem)
-        {
-            foreach (object key in dictionary.Keys)
+            var solidColorBrush = o as SolidColorBrush;
+            if (solidColorBrush != null)
             {
-                if (dictionary[key] == resourceItem)
-                {
-                    return key;
-                }
+                solidColorBrush.SetValue(SolidColorBrush.ColorProperty, e.NewValue);
+                return;
             }
 
-            if (dictionary.MergedDictionaries != null)
+            var gradientStop = o as GradientStop;
+            if (gradientStop != null)
             {
-                foreach (var dic in dictionary.MergedDictionaries)
-                {
-                    var key = GetKeyInResourceDictionary(dic, resourceItem);
-                    if (key != null)
-                    {
-                        return key;
-                    }
-                }
+                gradientStop.SetValue(GradientStop.ColorProperty, e.NewValue);
+                return;
             }
-
-            return null;
+            throw new InvalidOperationException($"{nameof(ColorKey)}.{RecourceReferenceProperty.Name} can only be set on {nameof(SolidColorBrush)} or {nameof(GradientStop)}");
         }
     }
 }

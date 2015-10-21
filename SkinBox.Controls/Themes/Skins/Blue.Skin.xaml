@@ -3,8 +3,11 @@
                     xmlns:local="clr-namespace:SkinBox.Controls">
     <Color x:Key="{x:Static local:Keys.BackgroundColorKey}">Blue</Color>
     <!--<SolidColorBrush x:Key="{x:Static local:Keys.BackgroundBrushKey}" Color="{StaticResource {x:Static local:Keys.BackgroundColorKey}}" />-->
-    
+
     <ControlTemplate x:Key="{x:Static local:Keys.CustomControlTemplateKey}" TargetType="{x:Type local:CustomControl}">
-        <Rectangle Fill="{TemplateBinding Background}" Stretch="Fill" />
+        <Rectangle Fill="{TemplateBinding Background}"
+                   Stretch="Fill"
+                   Stroke="{TemplateBinding BorderBrush}"
+                   StrokeThickness="30" />
     </ControlTemplate>
 </ResourceDictionary>

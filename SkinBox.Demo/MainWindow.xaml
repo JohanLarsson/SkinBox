@@ -24,7 +24,10 @@
         </UniformGrid>
         <UniformGrid Grid.Row="1" Rows="1">
             <GroupBox Header="Local">
-                <Border Background="{DynamicResource {x:Static controls:Keys.BackgroundBrushKey}}" />
+                <UniformGrid Columns="1">
+                    <Border Background="{DynamicResource {x:Static controls:Keys.BackgroundBrushKey}}" />
+                    <Border Background="{DynamicResource {x:Static controls:Keys.LinearBrushKey}}" />
+                </UniformGrid>
             </GroupBox>
             <GroupBox Header="Control">
                 <controls:CustomControl />

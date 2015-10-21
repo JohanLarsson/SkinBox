@@ -10,6 +10,8 @@
 
         public static ResourceKey BackgroundBrushKey { get; } = CreateResourceKey();
 
+        public static ResourceKey LinearBrushKey { get; } = CreateResourceKey();
+
         public static ResourceKey CustomControlTemplateKey { get; } = CreateResourceKey();
 
         public static ResourceKey BlueSkinKey { get; } = CreateResourceKey();

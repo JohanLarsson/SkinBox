@@ -12,6 +12,7 @@
 
     <Style TargetType="{x:Type local:CustomControl}">
         <Setter Property="Background" Value="{DynamicResource {x:Static local:Keys.BackgroundBrushKey}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static local:Keys.LinearBrushKey}}" />
         <Setter Property="Template" Value="{DynamicResource {x:Static local:Keys.CustomControlTemplateKey}}" />
     </Style>
 </ResourceDictionary>
