@@ -1,8 +1,10 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-
-namespace SkinBox.Demo
+﻿namespace SkinBox.Demo
 {
+    using System.Windows;
+    using System.Windows.Controls;
+
+    using SkinBox.Controls;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -10,7 +12,10 @@ namespace SkinBox.Demo
     {
         public MainWindow()
         {
+            Application.Current.Resources.MergedDictionaries.Add((ResourceDictionary)TryFindResource(Keys.YellowSkinKey));
+            Application.Current.Resources.MergedDictionaries.Add((ResourceDictionary)TryFindResource(Keys.BrushesKey));
             InitializeComponent();
+            //var brush = TryFindResource(Keys.BackgroundBrushKey);
         }
 
         private void OnChangeSkinClick(object sender, RoutedEventArgs e)

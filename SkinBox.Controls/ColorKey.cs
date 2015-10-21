@@ -15,12 +15,6 @@
             typeof(ColorKey),
             new PropertyMetadata(null, OnExpressionChanged));
 
-        static ColorKey()
-        {
-            var brushes = (ResourceDictionary)Application.Current.TryFindResource(Keys.BrushesKey);
-            Application.Current.Resources.MergedDictionaries.Add(brushes);
-        }
-
         public static void SetRecourceReference(this Animatable element, System.Windows.Expression value)
         {
             element.SetValue(RecourceReferenceProperty, value);
@@ -36,6 +30,7 @@
 
         public static void RefreshBrushes()
         {
+            //RefreshBrushes(Generic.Instance);
             RefreshBrushes(Application.Current.Resources);
         }
 

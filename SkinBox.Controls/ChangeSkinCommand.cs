@@ -31,8 +31,7 @@ namespace SkinBox.Controls
             var skin = (ResourceDictionary)Application.Current.TryFindResource(_key);
             if (skin != null)
             {
-                var old = Application.Current.Resources.MergedDictionaries
-                                                       .FirstOrDefault(IsSkin);
+                var old = Application.Current.Resources.MergedDictionaries.FirstOrDefault(IsSkin);
                 Application.Current.Resources.MergedDictionaries.Add(skin);
                 if (old != null)
                 {

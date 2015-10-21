@@ -6,6 +6,8 @@
 
     public static class Keys
     {
+        public static ResourceKey BrushesKey { get; } = CreateResourceKey();
+
         public static ResourceKey BackgroundColorKey { get; } = CreateResourceKey();
 
         public static ResourceKey BackgroundBrushKey { get; } = CreateResourceKey();
@@ -15,8 +17,6 @@
         public static ResourceKey CustomControlTemplateKey { get; } = CreateResourceKey();
 
         public static ResourceKey BlueSkinKey { get; } = CreateResourceKey();
-        
-        public static ResourceKey BrushesKey { get; } = CreateResourceKey();
 
         public static ResourceKey YellowSkinKey { get; } = CreateResourceKey();
 
