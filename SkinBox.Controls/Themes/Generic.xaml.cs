@@ -7,9 +7,12 @@ namespace SkinBox.Controls
     {
         public Generic()
         {
-            var resourceLocator = new Uri(@"/SkinBox.Controls;component/Themes/Skins/Yellow.Theme.xaml", UriKind.Relative);
-            var theme = (ResourceDictionary)Application.LoadComponent(resourceLocator);
-            Theme.ApplyTheme(theme);
+            if (Theme.Current == null)
+            {
+                var resourceLocator = new Uri(@"/SkinBox.Controls;component/Themes/Skins/Yellow.Theme.xaml", UriKind.Relative);
+                var theme = (ResourceDictionary)Application.LoadComponent(resourceLocator);
+                Theme.ApplyTheme(theme);
+            }
         }
     }
 }
