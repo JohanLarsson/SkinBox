@@ -16,17 +16,16 @@
         </Grid.RowDefinitions>
         <UniformGrid Height="50" Rows="1">
             <Button Background="Yellow"
-                    Command="{x:Static controls:Keys.SetYellowSkinCommand}"
-                    Content="{x:Static controls:Keys.YellowSkinKey}" />
+                    Command="{x:Static controls:Theme.ApplyYellowThemeCommand}" />
             <Button Background="Blue"
-                    Command="{x:Static controls:Keys.SetBlueSkinCommand}"
-                    Content="{x:Static controls:Keys.BlueSkinKey}" />
+                    Command="{x:Static controls:Theme.ApplyBlueThemeCommand}" />
         </UniformGrid>
         <UniformGrid Grid.Row="1" Rows="1">
             <GroupBox Header="Local">
-                <UniformGrid Columns="1">
-                    <Border Background="{DynamicResource {x:Static controls:Keys.BackgroundBrushKey}}" />
-                    <Border Background="{DynamicResource {x:Static controls:Keys.LinearBrushKey}}" />
+                <UniformGrid Rows="1">
+                    <Border Background="{DynamicResource {x:Static controls:Brushes.AccentBrushKey}}" />
+                    <Border Background="{DynamicResource {x:Static controls:Brushes.BackgroundBrushKey}}" />
+                    <Border Background="{DynamicResource {x:Static controls:Brushes.LinearBrushKey}}" />
                 </UniformGrid>
             </GroupBox>
             <GroupBox Header="Control">

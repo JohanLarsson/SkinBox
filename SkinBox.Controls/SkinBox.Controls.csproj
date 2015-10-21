@@ -41,6 +41,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Keys\Themes.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="Themes\Generic.xaml.cs">
+      <DependentUpon>Generic.xaml</DependentUpon>
+    </Compile>
     <Page Include="Themes\Brushes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -49,22 +54,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="ChangeSkinCommand.cs" />
-    <Compile Include="ColorKey.cs" />
+    <Compile Include="ApplyThemeCommand.cs" />
+    <Compile Include="Keys\Colors.cs" />
     <Compile Include="CustomControl.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Themes\Skins\Blue.Skin.xaml">
+    <Page Include="Themes\Skins\Blue.Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Skins\Yellow.Skin.xaml">
+    <Page Include="Themes\Skins\Blue.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Skins\Yellow.Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Skins\Yellow.Theme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Keys.cs" />
+    <Compile Include="Keys\Brushes.cs" />
+    <Compile Include="Keys\Templates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

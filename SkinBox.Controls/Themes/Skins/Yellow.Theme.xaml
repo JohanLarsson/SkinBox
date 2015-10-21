@@ -1,10 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:SkinBox.Controls">
-    <Color x:Key="{x:Static controls:Keys.BackgroundColorKey}">Yellow</Color>
-    <!--<SolidColorBrush x:Key="{x:Static controls:Keys.BackgroundBrushKey}" Color="{StaticResource {x:Static controls:Keys.BackgroundColorKey}}" />-->
-
-    <ControlTemplate x:Key="{x:Static controls:Keys.CustomControlTemplateKey}" TargetType="{x:Type controls:CustomControl}">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Yellow.Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <ControlTemplate x:Key="{x:Static controls:Templates.CustomControlTemplateKey}" TargetType="{x:Type controls:CustomControl}">
         <Ellipse Fill="{TemplateBinding Background}"
                  Stretch="Fill"
                  Stroke="{TemplateBinding BorderBrush}"

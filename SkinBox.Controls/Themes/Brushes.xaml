@@ -1,13 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:SkinBox.Controls">
-    <SolidColorBrush x:Key="{x:Static controls:Keys.BackgroundBrushKey}"
-                     controls:ColorKey.RecourceReference="{DynamicResource {x:Static controls:Keys.BackgroundColorKey}}" />
+    <SolidColorBrush x:Key="{x:Static controls:Brushes.BackgroundBrushKey}"
+                     Color="{DynamicResource {x:Static controls:Colors.BackgroundColorKey}}" />
 
-    <LinearGradientBrush x:Key="{x:Static controls:Keys.LinearBrushKey}"
+    <SolidColorBrush x:Key="{x:Static controls:Brushes.AccentBrushKey}"
+                     Color="{DynamicResource {x:Static controls:Colors.AccentColorKey}}" />
+    
+    <LinearGradientBrush x:Key="{x:Static controls:Brushes.LinearBrushKey}"
                       Opacity="2" EndPoint="0, 1">
-        <GradientStop Offset="0" controls:ColorKey.RecourceReference="{DynamicResource {x:Static controls:Keys.BackgroundColorKey}}" />
-        <GradientStop Offset=".3" controls:ColorKey.RecourceReference="{DynamicResource {x:Static controls:Keys.BackgroundColorKey}}" />
+        <GradientStop Offset="0" Color="{DynamicResource {x:Static controls:Colors.BackgroundColorKey}}" />
+        <GradientStop Offset=".3" Color="{DynamicResource {x:Static controls:Colors.BackgroundColorKey}}" />
         <GradientStop Offset="1" Color="Transparent" />
     </LinearGradientBrush>
 </ResourceDictionary>
