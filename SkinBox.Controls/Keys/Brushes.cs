@@ -1,8 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows;
-
-namespace SkinBox.Controls
+﻿namespace SkinBox.Controls
 {
+    using System.Runtime.CompilerServices;
+    using System.Windows;
+
     public static class Brushes
     {
         public static ResourceKey BackgroundBrushKey { get; } = CreateResourceKey();

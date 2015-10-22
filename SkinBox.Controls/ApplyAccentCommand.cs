@@ -1,9 +1,9 @@
-using System;
-using System.Windows.Input;
-using System.Windows.Media;
-
 namespace SkinBox.Controls
 {
+    using System;
+    using System.Windows.Input;
+    using System.Windows.Media;
+
     public class ApplyAccentCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;

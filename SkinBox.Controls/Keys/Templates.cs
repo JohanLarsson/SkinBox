@@ -1,8 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows;
-
-namespace SkinBox.Controls
+﻿namespace SkinBox.Controls
 {
+    using System.Runtime.CompilerServices;
+    using System.Windows;
+
     public static class Templates
     {
         public static ResourceKey CustomControlTemplateKey { get; } = CreateResourceKey();

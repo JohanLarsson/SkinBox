@@ -1,10 +1,7 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using SkinBox.Controls;
-
-namespace SkinBox.Demo
+﻿namespace SkinBox.Demo
 {
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -13,13 +10,6 @@ namespace SkinBox.Demo
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void OnApplyAccentClick(object sender, RoutedEventArgs e)
-        {
-            var button = (Button) sender;
-            var brush = (SolidColorBrush)button.Background;
-            Theme.ApplyAccent(brush.Color);
         }
     }
 }

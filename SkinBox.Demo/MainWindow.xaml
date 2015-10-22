@@ -9,6 +9,8 @@
         Height="350"
         controls:Theme.Source="/SkinBox.Demo;component/Red.Theme.xaml"
         mc:Ignorable="d">
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />

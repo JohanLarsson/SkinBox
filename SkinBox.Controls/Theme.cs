@@ -1,10 +1,10 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
-
-namespace SkinBox.Controls
+﻿namespace SkinBox.Controls
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Input;
+    using System.Windows.Media;
+
     public static class Theme
     {
         internal static ResourceDictionary Current { get; private set; }

@@ -1,9 +1,9 @@
-using System;
-using System.Windows;
-using System.Windows.Input;
-
 namespace SkinBox.Controls
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Input;
+
     public class ApplyThemeCommand : ICommand
     {
         public ApplyThemeCommand()

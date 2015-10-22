@@ -1,9 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Input;
-
-namespace SkinBox.Controls
+﻿namespace SkinBox.Controls
 {
+    using System.Runtime.CompilerServices;
+    using System.Windows;
+
     public static class Colors
     {
         public static ResourceKey BackgroundColorKey { get; } = CreateResourceKey();

@@ -2,10 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:SkinBox.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Colors.xaml" />
+        <!--<ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Colors.xaml" />-->
         <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Brushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
+    
+    <Color x:Key="{x:Static local:Colors.BackgroundColorKey}">Blue</Color>
+    <Color x:Key="{x:Static local:Colors.AccentColorKey}">HotPink</Color>
+    
     <ControlTemplate x:Key="{x:Static local:Templates.CustomControlTemplateKey}" TargetType="{x:Type local:CustomControl}">
         <UniformGrid Rows="1">
             <Rectangle Fill="{DynamicResource {x:Static local:Brushes.AccentBrushKey}}" Stretch="Fill" />
