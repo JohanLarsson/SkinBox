@@ -3,7 +3,7 @@
     using System.Runtime.CompilerServices;
     using System.Windows;
 
-    public static class Themes
+    public static partial class Theme
     {
         public static ResourceKey YellowThemeKey { get; } = CreateResourceKey();
 
@@ -11,7 +11,7 @@
 
         private static ComponentResourceKey CreateResourceKey([CallerMemberName] string caller = null)
         {
-            return new ComponentResourceKey(typeof (Themes), caller);
+            return new ComponentResourceKey(typeof(Theme), caller);
         }
     }
 }

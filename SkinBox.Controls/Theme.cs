@@ -5,7 +5,7 @@
     using System.Windows.Input;
     using System.Windows.Media;
 
-    public static class Theme
+    public static partial class Theme
     {
         internal static ResourceDictionary Current { get; private set; }
 
@@ -18,9 +18,9 @@
                 FrameworkPropertyMetadataOptions.NotDataBindable, 
                 OnSourceChanged));
 
-        public static ICommand ApplyYellowThemeCommand { get; } = CreateThemeCommand(Themes.YellowThemeKey);
+        public static ICommand ApplyYellowThemeCommand { get; } = CreateThemeCommand(YellowThemeKey);
 
-        public static ICommand ApplyBlueThemeCommand { get; } = CreateThemeCommand(Themes.BlueThemeKey);
+        public static ICommand ApplyBlueThemeCommand { get; } = CreateThemeCommand(BlueThemeKey);
 
         public static ICommand ApplyThemeCommand { get; } = new ApplyThemeCommand();
 

@@ -1,14 +1,15 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary x:Class="SkinBox.Controls.Themes.Generic"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:SkinBox.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <!-- Adding a default theme -->
+        <!--  Adding a default theme  -->
         <ResourceDictionary Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Theme.xaml" />
     </ResourceDictionary.MergedDictionaries>
-   
-    <ResourceDictionary x:Key="{x:Static local:Themes.YellowThemeKey}" Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Yellow.Theme.xaml" />
-    <ResourceDictionary x:Key="{x:Static local:Themes.BlueThemeKey}" Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Theme.xaml" />
-    
+
+    <ResourceDictionary x:Key="{x:Static local:Theme.YellowThemeKey}" Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Yellow.Theme.xaml" />
+    <ResourceDictionary x:Key="{x:Static local:Theme.BlueThemeKey}" Source="pack://application:,,,/SkinBox.Controls;component/Themes/Skins/Blue.Theme.xaml" />
+
     <Style TargetType="{x:Type local:CustomControl}">
         <Setter Property="Background" Value="{DynamicResource {x:Static local:Brushes.BackgroundBrushKey}}" />
         <Setter Property="BorderBrush" Value="{DynamicResource {x:Static local:Brushes.LinearBrushKey}}" />

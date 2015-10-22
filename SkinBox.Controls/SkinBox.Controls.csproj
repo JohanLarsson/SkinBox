@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplyAccentCommand.cs" />
-    <Compile Include="Keys\Themes.cs" />
+    <Compile Include="Internals\DesingMode.cs" />
+    <Compile Include="Keys\Theme.Keys.cs" />
     <Compile Include="Theme.cs" />
+    <Compile Include="Themes\Generic.xaml.cs">
+      <DependentUpon>Generic.xaml</DependentUpon>
+    </Compile>
     <Page Include="Themes\Brushes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
