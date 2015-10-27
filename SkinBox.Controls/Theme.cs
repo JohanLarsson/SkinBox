@@ -1,26 +1,22 @@
 ﻿namespace SkinBox.Controls
 {
-    using System;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
 
     public static partial class Theme
     {
+        static Theme()
+        {
+            ApplyYellowThemeCommand  = CreateThemeCommand(YellowThemeKey);
+            ApplyBlueThemeCommand  = CreateThemeCommand(BlueThemeKey);
+        }
+
         internal static ResourceDictionary Current { get; private set; }
 
-        public static readonly DependencyProperty SourceProperty = DependencyProperty.RegisterAttached(
-            "Source",
-            typeof (Uri),
-            typeof (Theme),
-            new FrameworkPropertyMetadata(
-                default(Uri),
-                FrameworkPropertyMetadataOptions.NotDataBindable, 
-                OnSourceChanged));
+        public static ICommand ApplyYellowThemeCommand { get; }
 
-        public static ICommand ApplyYellowThemeCommand { get; } = CreateThemeCommand(YellowThemeKey);
-
-        public static ICommand ApplyBlueThemeCommand { get; } = CreateThemeCommand(BlueThemeKey);
+        public static ICommand ApplyBlueThemeCommand { get; }
 
         public static ICommand ApplyThemeCommand { get; } = new ApplyThemeCommand();
 
@@ -41,28 +37,6 @@
             Application.Current.Resources[Colors.AccentColorKey] = accent;
             Application.Current.Resources[Brushes.AccentBrushKey] =new SolidColorBrush(accent).GetAsFrozen();
             ApplyTheme(Current);
-        }
-
-        public static void SetSource(this Window element, Uri value)
-        {
-            element.SetValue(SourceProperty, value);
-        }
-
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(Window))]
-        public static Uri GetSource(this Window element)
-        {
-            return (Uri)element.GetValue(SourceProperty);
-        }
-
-        private static void OnSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var source = e.NewValue as Uri;
-            if (source != null)
-            {
-                var theme = new ResourceDictionary {Source = source};
-                ApplyTheme(theme);
-            }
         }
 
         private static ICommand CreateThemeCommand(ResourceKey key)
